@@ -1,2 +1,44 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+
+<form action="/urls" method="post">
+	Enter URL: 
+	<input type="text" name="url[long_url]" autofocus>
+	<!-- it has to be a column name -->
+	<input type="submit" value="Submit">
+</form>
+
+<p style="color:red;"> <%= @errors %> </p>
+
+<table style="width:100%"> 
+
+
+  <tr>
+    <th>No.</th>
+    <th>long_url</th> 
+    <th>short_url</th>
+  </tr>
+  <% count = 0 %>
+  <% @all.each do |x| %>
+  <tr>
+    <td> <%= count +=1 %> </td>
+    <td> <%= x.long_url %> </td> 
+    <td> <a href=<%= x.short_url %>>http://localhost:9393/<%= x.short_url %> </td>
+  </tr>
+  <% end %>
+</table>
+
+</body>
+</html>
+
+
+
