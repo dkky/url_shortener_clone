@@ -17,6 +17,7 @@ GEM
     arel (6.0.3)
     backports (3.6.7)
     builder (3.2.2)
+    byebug (9.0.5)
     daemons (1.2.3)
     diff-lcs (1.2.5)
     eventmachine (1.0.8)
@@ -74,6 +75,7 @@ GEM
     tilt (2.0.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
@@ -81,6 +83,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   activesupport
+  byebug
   pg
   puma
   rails_12factor
@@ -91,6 +94,7 @@ DEPENDENCIES
   sinatra-activerecord
   sinatra-contrib
   thin
+  will_paginate (~> 3.0.5)
 
 BUNDLED WITH
-   1.10.6
+   1.12.5

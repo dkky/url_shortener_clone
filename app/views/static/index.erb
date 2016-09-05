@@ -1,44 +1,65 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-table, th, td {
-    border: 1px solid black;
-}
-</style>
-</head>
-<body>
+
+<ul class="header" id="myTopnav">
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">Product Tour</a></li>
+  <li><a href="#news">Resources</a></li>
+  <li><a href="#contact">Sign In</a></li>
+  <li><a href="#about">Sign Up</a></li>
+  <li class="icon" id='top-icon'>
+    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+  </li>
+</ul>
 
 
-<form action="/urls" method="post">
-	Enter URL: 
-	<input type="text" name="url[long_url]" autofocus>
-	<!-- it has to be a column name -->
-	<input type="submit" value="Submit">
-</form>
+<div id='toppart' class=container-fluid>
+	<img class='background_pic' src="image/cat.jpg" alt="background">
+	<div id="bee"> 
+			<img class='bee_pic' src="image/bee.png" alt="URL Shortener" data-placement='top' data-toggle="popover" title="URL Bee" data-content="Ready to cut your URL short?" data-trigger='focus' tabindex='0' role='button'>
+	</div>
+	<p></p>
+	<div class="text">
+		<p id="power"> UNLEASH THE POWER OF THE LINK </p>
+ 	</div>
+ 	<div class='form-row row'>
+		<div class="form-container">
+			<form id="url_link" action="/urls" method="post">
+				<input type="text" name="url[long_url]" placeholder="Your url link please.." autofocus>
+				<button type="submit" class=".btn-default" id="submit_button" form="url_link" value="Submit"> Shorten </button>
+				<p class="error"> <%= @errors %> </p>
+			</form>
+		</div>
+	</div>
+</div>
 
-<p style="color:red;"> <%= @errors %> </p>
-
-<table style="width:100%"> 
+<div class='info'> </div>
 
 
-  <tr>
-    <th>No.</th>
-    <th>long_url</th> 
-    <th>short_url</th>
-  </tr>
-  <% count = 0 %>
-  <% @all.each do |x| %>
-  <tr>
-    <td> <%= count +=1 %> </td>
-    <td> <%= x.long_url %> </td> 
-    <td> <a href=<%= x.short_url %>>http://localhost:9393/<%= x.short_url %> </td>
-  </tr>
-  <% end %>
-</table>
 
-</body>
-</html>
+
+<div id='list-head' class=container> 
+	<p id='history'> YOUR HISTORY </p>
+	<div id='expand'>
+		<button id='expand_button' onclick="myFunction1()"> Click Me </button>
+	</div>
+	<div id='list' style="display:none">
+		<ul>
+			<% count = 0 %> 
+			<% @all.each do |x| %>
+		  <li class ='show'>
+		  <p> Your URL: </p> <a href=<%= x.long_url %>> <%= x.long_url %> </a> 
+		  <p> is shortened into </p>
+		  <a href=<%= x.short_url %>>http://localhost:9393/<%= x.short_url %> </a>
+		  <div id="count"> <p> Number of Visits: <%= x.count %> </p> </div>
+		  </li>
+		  	<% end %>
+		</ul>
+	</div>
+</div>
+
+<%= will_paginate @all %>
+
+
+
 
 
 

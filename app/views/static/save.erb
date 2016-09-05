@@ -1,0 +1,59 @@
+
+<ul class="header" id="myTopnav">
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">Product Tour</a></li>
+  <li><a href="#news">Resources</a></li>
+  <li><a href="#contact">Sign In</a></li>
+  <li><a href="#about">Sign Up</a></li>
+   <li class="icon">
+    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+  </li>
+</ul>
+
+<div id=container>
+<!-- 	 	<div id="bee"> 
+			<img src="image/bee.png" alt="URL Shortener" data-placement='top' data-toggle="popover" title="URL Bee" data-content="Ready to cut your URL short?" data-trigger='focus' tabindex='0' role='button'>
+		</div> -->
+	<p></p>
+	<div class="text">
+		<p id="power"> UNLEASH THE POWER OF THE LINK </p>
+ 	</div>
+</div>
+
+
+<div class='form-row row'>
+	<div class='col-xs-offset-1 col-xs-offset-10 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 form-container'>
+		<form id="url_link" action="/urls" method="post">
+			Enter URL: 
+			<input type="text" name="url[long_url]" placeholder="Your url link please.." autofocus>
+			<!-- it has to be a column name -->
+<!-- 			<input type="submit" value="Shorten"> -->
+			<button type="submit" class="btn btn-danger" id="submit_button" form="url_link" value="Submit"> Shorten </button>
+			<p class="error"> <%= @errors %> </p>
+		</form>
+	</div>
+</div>
+
+<div class='col-xs-offset-5 col-xs-offset-10 col-sm-offset-5 col-sm-6 col-md-offset-5 col-md-6 info'> </div>
+
+<!-- 
+<div class="works"> 
+<h2> How We Works </h2>
+<img src="/image/explain.gif" alt="How it works">
+</div> -->
+
+
+
+
+<div class="list">
+<ul>
+	<% count = 0 %> 
+	<% @all.each do |x| %>
+  <li class ='show'>
+  <p> Your URL: </p> <a href=<%= x.long_url %>> <%= x.long_url %> </a> <p> is shortened into </p>
+  <a href=<%= x.short_url %>>http://localhost:9393/<%= x.short_url %> </a>
+   <div id="count"> <p> Number of Visits: <%= x.count %> </p> </div>
+  </li>
+  <% end %>
+</ul>
+</div>

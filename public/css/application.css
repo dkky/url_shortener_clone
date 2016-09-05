@@ -1,0 +1,274 @@
+
+
+.header {
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.header li {
+    float: left;
+}
+
+.header li a {
+	font-family: "Verdana", Helvetica, sans-serif;
+	font-size: 18px;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 14px;
+    text-decoration: none;
+    width: 100%;
+}
+
+ul.header li.icon {display: none;}
+
+.header li a:hover {
+   border: 3px solid black;
+   border-left: white;
+   border-right: white;
+   border-bottom: white;
+}
+
+@media screen and (max-width:680px) {
+  ul.header li:not(:first-child) {display: none;}
+  ul.header li.icon {
+    float: right;
+    display: inline-block;
+  }
+  ul.header {
+  	margin:0;
+  	padding:0;
+  }
+}
+
+/* The "responsive" class is added to the 'header' with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
+@media screen and (max-width:680px) {
+  ul.header.responsive {position: relative;}
+  ul.header.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.header.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.header.responsive li a {
+    display: block;
+    text-align: center;
+  }
+}
+
+
+#toppart {
+	width: 100%;  
+	margin: auto;
+	position:relative;
+	padding:0;
+}
+
+#toppart img.background_pic {
+    width: 100%;
+    height: 555px;
+}
+
+.text {
+  color: white;
+  font-family: brandon-grotesque,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 50px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;  
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+@media screen and (max-width:680px) {
+	#toppart img.background_pic {
+	    height: auto;
+	}
+	.text {
+		font-size: 30px;
+		top: 30%;
+  		left: 50%;  
+  		transform: translate(-50%, -50%);
+	}
+}
+
+
+
+.form-container {
+  position: absolute;
+  top: 80%;
+  left: 50%;  
+  transform: translate(-50%, -50%);
+  width:100%;
+  text-align: center;
+  font-size: 25px;
+  font-family: "Verdana", Helvetica, sans-serif;    
+}
+
+#url_link {
+	height:auto;
+	padding-top: 20px;
+}
+
+
+#url_link input[type="text"] {
+	margin: 10px;
+	height:40px;
+	width: 250;
+	border-radius:10px;
+	font-size: 15px;
+}
+
+#submit_button {
+	 display: inline-block;
+	 border-radius: 10px;
+	 background-color: white;
+	 font-size:15px;
+}
+
+@media screen and (max-width:680px) {
+	#url_link {
+	    height:auto;
+	}
+
+	.form-container {
+	  font-size: 12px;
+	  font-family: "Verdana", Helvetica, sans-serif;    
+	  top: 70%;
+	  opacity:1;
+	}
+	#url_link input[type="text"] {
+		width: auto;
+	}
+
+	#submit_button {
+		font-size: 12px;
+		position: absolute;
+		top: 100%;
+		left: 50%;  
+		transform: translate(-50%, -50%);
+	}
+}
+
+.error {
+	font-size: 20px;
+	color: white;
+	text-align: center;
+}
+
+#list-head {
+	width: 100%;  
+	margin: auto;
+	position:relative;
+}
+
+#history {
+	text-align: center;
+	font-size: 40px;
+}
+
+#expand {
+	text-align: center;
+	margin: 10px;
+	margin-bottom: 20px;
+}
+
+#expand_button{
+	background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.list ul {
+	padding-right:40px;
+}
+
+
+li.show {
+	margin: 0 auto 10px auto;
+	opacity: 1;
+	/*background: -webkit-linear-gradient(right, #56ab2f, #a8e063);*/
+	background: #1D976C; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #1D976C , #93F9B9); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #1D976C , #93F9B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+	height: auto;
+	width: auto;
+	padding: 10px 10px;
+	border-radius: 15px;
+	word-wrap: break-word;
+}
+
+
+#count {
+	float:right;
+}
+
+@media screen and (max-width:800px) {
+	#count {
+		float:none;
+	}
+}
+/*#bee img {
+	position: relative;
+	width: 80px;
+	height:80px;
+}
+
+.mirror {
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+
+*/
+
+.info {
+	font-size: 20px;
+	margin:10px;
+	padding:10px;
+	text-align:center;
+}
+
+
+#bee {
+/*	position: absolute;
+*/}
+
+#bee img.bee_pic {
+/*	position: relative;*/
+	width: 80px;
+	height:80px;
+/*	float:right;*/
+	position: absolute;
+	top: 30%;
+	left: 85%;  
+	transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width:680px) {
+	#history {
+		font-size: 20px;
+	}
+
+	#bee img.bee_pic {
+		width: 20px;
+		height:20px;
+	}
+	#expand_button {
+		padding: 8px 25px;
+		font-size: 12px;
+	}
+}
+

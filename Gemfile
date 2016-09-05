@@ -26,6 +26,8 @@ gem 'rspec'
 
 gem 'byebug'
 
+gem 'will_paginate', '~> 3.0.5'
+
 group :development, :test do
 	# Adding shotgun for local web hosting
 	gem 'shotgun'
