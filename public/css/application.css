@@ -272,3 +272,12 @@ li.show {
 	}
 }
 
+#page {
+	text-align:center;
+}
+
+#joke {
+	text-align:center;
+	margin:10px;
+}
+

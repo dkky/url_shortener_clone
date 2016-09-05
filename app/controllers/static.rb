@@ -1,7 +1,7 @@
 
 get '/' do
   # @all = Url.all.order(created_at: :desc)
-  @all= Url.paginate(:page => params[:page], :per_page => 10)
+  @all= Url.paginate(:page => params[:page], :per_page => 10).order(id: :desc)
   @last = Url.last(2)
   @errors = session[:error]
   session[:error] = nil
@@ -25,6 +25,11 @@ post '/urls' do
 		error = @url.errors.messages[:long_url][0]
 		error.to_json
 	end
+end
+
+get '/joke' do
+	response = Unirest.get('http://api.icndb.com/jokes/random')
+ 	@joke = response.body['value']['joke']
 end
 
 get '/:short_url' do

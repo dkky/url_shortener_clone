@@ -24,6 +24,7 @@ require 'byebug'
 ######################################################################
 require 'will_paginate'
 require 'will_paginate/active_record' 
+require 'unirest'
 
 # System Setup
 ######################################################################

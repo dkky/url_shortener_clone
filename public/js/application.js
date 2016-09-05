@@ -10,6 +10,14 @@ $(document).ready(function(){
     $('body').click(function(){
     	$('#bee img').popover('destroy');
     });
+
+    $.ajax({
+    	url: '/joke',
+    	method: 'get',
+    	success: function(joke) {
+    		$('#joke').text(joke);
+    	}
+    })
 });
 
 // $(document).ready(function() {

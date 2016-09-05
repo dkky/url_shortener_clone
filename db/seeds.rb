@@ -1,9 +1,9 @@
-require 'SecureRandom'
+require 'securerandom'
 require_relative '../app/models/url'
 
 inserts = []
 
-File.open('db/urls','r').each do |row|
+File.open('db/test-url','r').each do |row|
 	inserts << "('#{row[1..-4]}', '#{SecureRandom.hex(6)}')"
 end
 

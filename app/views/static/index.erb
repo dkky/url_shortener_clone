@@ -20,6 +20,7 @@
 	<div class="text">
 		<p id="power"> UNLEASH THE POWER OF THE LINK </p>
  	</div>
+	<p id='joke'><%= @joke %></p>
  	<div class='form-row row'>
 		<div class="form-container">
 			<form id="url_link" action="/urls" method="post">
@@ -56,7 +57,7 @@
 	</div>
 </div>
 
-<%= will_paginate @all %>
+<div id='page'> <%= will_paginate @all %> </div>
 
 
 

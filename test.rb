@@ -1,10 +1,12 @@
-require 'SecureRandom'
-require_relative '/app/models/url'
+require_relative 'config/environments/init'
 
-inserts = []
+# require 'SecureRandom'
+# require_relative '/app/models/url'
 
-File.open('db/test-url','r').each do |row|
-	inserts << "'#{row[1..-4]}' #{SecureRandom.hex(6)}"
-end
+# inserts = []
 
-Url.connection.execute "INSERT INTO urls ('long_url','short_url')  #{inserts.join(", ")}"
+# File.open('db/test-url','r').each do |row|
+# 	inserts << "'#{row[1..-4]}' #{SecureRandom.hex(6)}"
+# end
+
+# Url.connection.execute "INSERT INTO urls ('long_url','short_url')  #{inserts.join(", ")}"
